@@ -1,0 +1,14 @@
+{{ template "default.html" . }}
+{{ define "content" }}
+{{ with .Content }}
+<p>{{ .Post.Cdt.Format "Mon, Jan 2, 2006" }} von {{ .Post.Author }}</p>
+
+{{ .Post.RenderBody | printf "%s" }}
+{{ if .Prev }}
+Prev: <a href="{{ .Prev.Url }}">{{ .Prev.Content.Post.Title }}</a>
+{{ end }}
+{{ if .Next }}
+Next: <a href="{{ .Next.Url }}">{{ .Next.Content.Post.Title }}</a>
+{{ end }}
+{{ end }}
+{{ end }}

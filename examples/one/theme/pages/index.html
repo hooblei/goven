@@ -1,0 +1,15 @@
+{{ template "default.html" . }}
+{{ define "content" }}
+{{ with .Content }}
+<h2>Posts</h2>
+
+<ul>
+    {{ range .Pages }}
+    <li><a href="{{ .Url }}">{{ .Content.Post.Title }}</a></li>
+    {{ else }}
+    <li>No Posts yet</li>
+    {{ end }}
+</ul>
+
+{{ end }}
+{{ end }}

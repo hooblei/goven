@@ -1,0 +1,8 @@
+{
+  "title": "My Blog",
+  "owner": "me <me@cubeball.net>",
+  "baseUrl": "/",
+  "theme": "./theme",
+  "src": "./posts",
+  "dst": "./public"
+}
