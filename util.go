@@ -3,6 +3,7 @@ package goven
 
 import (
     "strings"
+    "time"
     "regexp"
     "github.com/sloonz/go-iconv"
 )
@@ -20,5 +21,17 @@ func Slugified(ipt string) string {
     }
 
     return out
+}
+
+
+// Try to parse given string `s` into `time.Time` using datetime `formats`
+func str2time(s string, formats []string) (t time.Time, err error) {
+    for _, f := range formats {
+        if t, err = time.Parse(f, s); err == nil {
+            return
+        }
+    }
+
+    return
 }
 
